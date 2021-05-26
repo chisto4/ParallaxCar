@@ -4,6 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>URALFEST</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css">
@@ -12,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Mitr:wght@200;400;500;700&family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     <base target="_blank">
 
   </head>
@@ -23,6 +31,7 @@
               <h1>URAL SOUND FESTIVAL</h1><br>
               <h2>10 - 12 июня</h2>
             </div>
+      <div class="navdesctopPanel">
         <div class="button">
           <a href="#" data-hystmodal="#myModal">РЕГИСТРАЦИЯ</a>
         </div>
@@ -38,6 +47,19 @@
         <div class="button">
           <a href="#" data-hystmodal="#promo">PROMO</a>
         </div>
+      </div>
+        <div class="burger-menu">
+          <a href="" class="burger-menu_button">
+            <spun class="burger-menu_lines"></spun>
+          </a>
+          <nav class="burger-menu_nav">
+            <a href="#" data-hystmodal="#myModal" class="burger-menu_link">РЕГИСТРАЦИЯ</a>
+            <a href="#" data-hystmodal="#discipline" class="burger-menu_link">ДИСЦИПЛИНЫ</a>
+            <a href="#" data-hystmodal="#location" class="burger-menu_link">МЕСТО ПРОВЕДЕНИЯ</a>
+            <a href="#" data-hystmodal="#promo" class="burger-menu_link">PROMO</a>
+          </nav>
+          <div class="burger-menu_overlay"></div>
+        </div>
 
       </nav>
       <div class="container">
@@ -46,7 +68,7 @@
           <img src="img/sub1.png" class="sub" alt="" />
           <img src="img/sub3.png" class="sub sub2" alt="" />
           <img src="img/estrada.png" class="sub estrada" alt="" />
-          <img src="img/poweramp.png" class="poweramp" alt="" />
+          <img src="img/poweramp.png" class="sub poweramp" alt="" />
           <img src="img/urallogo.png" class="main-title" alt="" />
       </div>
       <div class="content">
@@ -188,9 +210,12 @@
       <div role="dialog" aria-modal="true">
           <button data-hystclose class="hystmodal__close mapClose">Закрыть</button>
 
-          <div class="map">
+          <div class="map mapDesctop">
             <h4>г. Ростов-на-Дону, ул. Доватора 132/1, магазин LOUD SOUND 12.00</h4>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.907009947818!2d39.63018107720815!3d47.237964786720404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b8a3b663314d%3A0x5816dc6fb81e083f!2sLOUD%20SOUND!5e0!3m2!1sru!2sru!4v1621972704115!5m2!1sru!2sru" width="600" height="450" style="border:0; border-radius:1rem" allowfullscreen="" loading="lazy"></iframe>          </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.907009947818!2d39.63018107720815!3d47.237964786720404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b8a3b663314d%3A0x5816dc6fb81e083f!2sLOUD%20SOUND!5e0!3m2!1sru!2sru!4v1621972704115!5m2!1sru!2sru" width="600" height="450" style="border:0; border-radius:1rem" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="map mapMobile">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.9070103342406!2d39.62973961597334!3d47.237964779162006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b8a3b663314d%3A0x5816dc6fb81e083f!2sLOUD%20SOUND!5e0!3m2!1sru!2sru!4v1622046095156!5m2!1sru!2sru" width="320" height="400" style="border:0; border-radius:1rem" allowfullscreen="" loading="lazy"></iframe>          </div>
           </div>
     </div>
   </div>
@@ -202,7 +227,7 @@
           <button data-hystclose class="hystmodal__close">Закрыть</button>
 
           <div class="hystmodal__styled">
-            <iframe width="1020" height="600" 
+            <iframe class="youtube" width="1020" height="600" 
             src="https://www.youtube.com/embed/IllFJJSSdxU" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; 
@@ -224,6 +249,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
     <script src="js/script.js"></script>
     <script src="js/hystmodal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jsBurgerMenu.js"></script>
     <script>
       const myModal = new HystModal({
   linkAttributeName: "data-hystmodal",
