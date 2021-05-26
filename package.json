@@ -1,0 +1,19 @@
+{
+  "name": "parallaxcar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chisto4/ParallaxCar.git"
+  },
+  "author": "Ch4Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chisto4/ParallaxCar/issues"
+  },
+  "homepage": "https://github.com/chisto4/ParallaxCar#readme"
+}

@@ -1,0 +1,290 @@
+.hystmodal__opened {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+.hystmodal__shadow{
+    position: fixed;
+    border:none;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 98;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    background-color: black;
+}
+.hystmodal__shadow--show{
+    pointer-events: auto;
+    opacity: 0.6;
+}
+.hystmodal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    opacity: 1;
+    pointer-events: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    z-index: 99;
+    visibility: hidden;
+    transition: 0.8s;
+}
+.hystmodal--active{
+    opacity: 1;
+}
+.hystmodal--moved,
+.hystmodal--active{
+    pointer-events: auto;
+    visibility: visible;
+}
+.hystmodal__wrap {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.hystmodal__window {
+    margin: 50px 0;
+    padding: 3rem 3rem;
+    border-radius: 4rem;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: linear-gradient(to left bottom, rgba(143, 167, 187, 0.842) 30%, rgba(117, 76, 84, 0.808) 80%);
+    width: 500px;
+    max-width: 100%;
+    overflow: visible;
+    transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+    transform: scale(0.4);
+    opacity: 0;
+}
+.hystmodal--active .hystmodal__window{
+    display: flex;
+    justify-content: center;
+    transform: scale(1);
+    opacity: 1;
+}
+.hystmodal__close{
+    position: absolute;
+    z-index: 10;
+    top:0;
+    right: -40px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+    outline: none;
+}
+.hystmodal__close:focus{
+    outline: 2px dotted #afb3b9;
+    outline-offset: 2px;
+}
+@media all and (max-width:767px){
+    .hystmodal__close{
+        top:10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+    }
+    .hystmodal__window{
+        margin: 0;
+    }
+}
+
+/* REGISTRATION MODAL LOGIN FORM */
+
+.hystmodal__styled {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.loginblock__h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: #f1f3f5;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.loginblock__h2{
+    margin-top: 1rem;
+    color: #f8f8fa;
+    font-size: 14px;
+}
+.loginblock__form{
+    padding-top: 1rem;
+}
+.formitem{
+    padding-bottom: 24px;
+    position: relative;
+}
+.formitem input{
+    outline: none;
+    background: #523939;
+    box-shadow: inset 0 0 0 100px #fff;
+    border: 1px solid #DDE0E6;
+    box-sizing: border-box;
+    color: #080808;
+    font-size: 15px;
+    padding: 0.7rem 1rem;
+    box-sizing: border-box;
+    width: 20rem;
+    border-radius: 1rem;
+
+}
+.formitem input:focus{
+    border-color:#ca0223;
+    border-radius: 1.4rem;
+}
+.loginblock__bottom{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+}
+.formcheckbox{
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+.formcheckbox input{
+    position: absolute;
+    /* visibility: hidden; */
+    top:0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.formcheckbox:focus-within{
+    outline: 2px dotted #afb3b9;
+    outline-offset:2px;
+}
+.formcheckbox input+span{
+    height: 21px;
+    color: #e4e8f0;
+    font-size: 12px;
+    line-height: 21px;
+    position: relative;
+    align-items: center;
+    user-select: none;
+}
+.formcheckbox input:checked + span{
+    color: #44a05bc7;
+}
+.checkplace{
+    display: flex;
+    background: #faf8f8;
+    border: 1px solid #DDE0E6;
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    margin-right: 1rem;
+}
+
+.checkplace img{
+    display: block;
+    max-width: 90%;
+    max-height: 95%;
+    margin: auto;
+    opacity: 0;
+}
+.formcheckbox input:checked + span .checkplace{
+    border-color:#f9fafc;
+}
+.formcheckbox input:checked + span .checkplace img{
+    opacity: 1;
+    color: red;
+}
+.loginblock__link{
+    display: block;
+    color:#c00a0a;
+    font-size: 12px;
+    line-height: 21px;
+}
+.formsubmit{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.formsubmit .button{
+    width: 60%;
+    height: 3rem;
+    font-size: 0.7rem;
+    font-weight: 400;
+
+    background: linear-gradient(to left bottom, rgba(243, 246, 248, 0.76) 30%, rgba(206, 200, 202, 0.404) 80%);
+    color: rgba(163, 5, 31, 0.842);
+    border-radius: 1.5rem;
+}
+
+/* DISCIPLINE WINDOW*/
+
+.dsplineText {
+    line-height: 1.5rem;
+}
+
+/* MAP*/
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to left bottom, rgba(143, 167, 187, 0.842) 30%, rgba(117, 76, 84, 0.808) 80%);
+    border-radius: 2rem;
+    padding: 1rem 2.5rem 2.8rem 2.5rem;
+    transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+    transform: scale(1.2);
+    /* margin: 50px 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 500px;
+    max-width: 100%;
+    overflow: visible;
+    transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+    transform: scale(0.4);
+    opacity: 0; */
+}
+
+.mapClose {
+    top: 10rem;
+    right:10rem;
+}
+
+.map h4 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+/*PROMO YOU TUBE*/
+
+.promovideo {
+    background: none;
+}
